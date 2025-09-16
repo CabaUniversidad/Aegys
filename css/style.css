@@ -6,3 +6,22 @@ body {
 .producto {
   margin-bottom: 10px;
 }
+
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  background: #0b1224cc; backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+.wrap { max-width: 1000px; margin: 0 auto; padding: 10px 16px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.brand { color: var(--fg); text-decoration: none; font-weight: 700; }
+.nav-toggle {
+  display: none; border: 1px solid var(--line); background: transparent; color: var(--fg);
+  padding: 6px 10px; border-radius: 6px; cursor: pointer;
+}
+.site-nav { display: flex; gap: 16px; }
+.site-nav a {
+  color: var(--fg); text-decoration: none; padding: 6px 8px; border-radius: 6px;
+}
+.site-nav a:hover { color: var(--brand); background: rgba(56,189,248,.08); }
