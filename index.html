@@ -8,23 +8,39 @@
 <body>
   <h1>Tienda Básica</h1>
 
-  <div class="producto">
-    <p>Producto 1 - $10</p>
-    <button onclick="agregarAlCarrito()">Agregar al carrito</button>
-  </div>
+  <section class="productos">
+    <div class="tarjeta-producto">
+      <div class="imagen-producto">
+        <img src="" alt="Producto 1">
+      </div>
+      <h3>Producto 1</h3>
+      <p>Descripción breve del producto 1.</p>
+      <p class="precio">$10</p>
+      <button onclick="agregarAlCarrito()">Agregar al carrito</button>
+    </div>
 
-  <div class="producto">
-    <p>Producto 2 - $15</p>
-    <button onclick="agregarAlCarrito()">Agregar al carrito</button>
-  </div>
+    <div class="tarjeta-producto">
+      <div class="imagen-producto">
+        <img src="https://via.placeholder.com/150" alt="Producto 2">
+      </div>
+      <h3>Producto 2</h3>
+      <p>Descripción breve del producto 2.</p>
+      <p class="precio">$15</p>
+      <button onclick="agregarAlCarrito()">Agregar al carrito</button>
+    </div>
 
-  <div class="producto">
-    <p>Producto 3 - $20</p>
-    <button onclick="agregarAlCarrito()">Agregar al carrito</button>
-  </div>
+    <div class="tarjeta-producto">
+      <div class="imagen-producto">
+        <img src="https://via.placeholder.com/150" alt="Producto 3">
+      </div>
+      <h3>Producto 3</h3>
+      <p>Descripción breve del producto 3.</p>
+      <p class="precio">$20</p>
+      <button onclick="agregarAlCarrito()">Agregar al carrito</button>
+    </div>
+  </section>
 
   <p>Productos en carrito: <span id="contador">0</span></p>
-
   <script src="script.js"></script>
 </body>
 </html>
