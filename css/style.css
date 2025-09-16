@@ -1,11 +1,67 @@
+/* ===== Base (unifica el body) ===== */
+:root { --bg:#0f172a; --fg:#e2e8f0; --line:#1e293b; --brand:#38bdf8; }
+* { box-sizing: border-box; }
 body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
+  font-family: system-ui, Arial, sans-serif;
+  margin: 0;                 /* quitamos el margin:20px anterior */
+  color: var(--fg);
+  background: var(--bg);
 }
+.skip-link { position:absolute; left:-9999px; top:auto; }
+.skip-link:focus { left:12px; top:12px; background:#000; color:#fff; padding:6px 10px; border-radius:6px; }
 
+/* ===== Header ===== */
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  background: #0b1224cc; backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+.wrap {
+  max-width: 1000px; margin: 0 auto; padding: 10px 16px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+}
+.brand { color: var(--fg); text-decoration: none; font-weight: 700; }
+
+/* El botón hamburguesa NO se usa (forzado a oculto) */
+.nav-toggle { display: none !important; }
+
+/* Contenedor <nav> */
+.site-nav { display: block; }  /* el ul será el flex */
+
+/* <<< AQUI ESTÁ LA CLAVE: ul/li en fila >>> */
+.site-nav ul {
+  display: flex;              /* fila horizontal */
+  gap: 16px;                  /* espacio entre items */
+  margin: 0;                  /* resetea márgenes del ul */
+  padding: 0;                 /* resetea padding del ul */
+  list-style: none;           /* sin viñetas */
+  align-items: center;
+}
+.site-nav li { list-style: none; }
+.site-nav a {
+  display: inline-block;
+  color: var(--fg);
+  text-decoration: none;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+.site-nav a:hover { color: var(--brand); background: rgba(56,189,248,.08); }
+
+/* ===== Contenido ===== */
+main { max-width: 1000px; margin: 0 auto; padding: 16px; }
+h1 { margin: 16px 0; }
+
+/* Productos (mantiene tu estilo original) */
 .producto {
   margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #0b1224;
 }
+button { cursor: pointer; }
+#contador { font-weight: 700; }
+
 
 
 footer {
