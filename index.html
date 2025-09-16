@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <title>Ventas Básicas</title>
+
+  <link rel="stylesheet" href="./css/style.css" />
+
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="css/style.css" />
 
@@ -26,6 +29,47 @@
   </div>
 
   <p>Productos en carrito: <span id="contador">0</span></p>
+  <footer>
+  <hr>
+  <p><strong>TIENDA BÁSICA</strong></p>
+
+  <nav>
+    <p>
+      <a href="#">INICIO</a> |
+      <a href="#">PRODUCTOS</a> |
+      <a href="#">CONTACTO</a>
+    </p>
+  </nav>
+
+  <p>SÍGUENOS EN:
+    <a href="#">FACEBOOK</a>,
+    <a href="#">INSTAGRAM</a>,
+    <a href="#">TWITTER</a>
+  </p>
+
+  <p>CONTACTO: <a href="mailto:INFO@TIENDABASICA.COM">INFO@TIENDABASICA.COM</a></p>
+
+  <form>
+    <h2>ENVÍA TU MENSAJE</h2>
+    
+    <label for="nombre">NOMBRE:</label><br>
+    <input type="text" id="nombre" name="nombre" required><br><br>
+
+    <label for="correo">CORREO ELECTRÓNICO:</label><br>
+    <input type="email" id="correo" name="correo" required><br><br>
+
+    <label for="mensaje">MENSAJE:</label><br>
+    <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br><br>
+
+    <button type="submit">ENVIAR</button>
+  </form>
+
+  <p>&copy; 2025 TIENDA BÁSICA. TODOS LOS DERECHOS RESERVADOS.</p>
+</footer>
+
+
+
+  <script src="./js/script.js"></script>
 
   <section id="carrito">
     <h2>Carrito de Compras</h2>
@@ -56,5 +100,6 @@
 
 
   <script src="script.js"></script>
+
 </body>
 </html>
