@@ -22,6 +22,13 @@ body {
 }
 .brand { color: var(--fg); text-decoration: none; font-weight: 700; }
 
+.header--con-fondo{
+  background-image: url("../imagenes_logo/logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
 /* El botón hamburguesa NO se usa (forzado a oculto) */
 .nav-toggle { display: none !important; }
 
