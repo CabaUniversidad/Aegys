@@ -64,7 +64,7 @@ button { cursor: pointer; }
 
 
 
-/* ===== Footer (Distribución Vertical y Centrada) ===== */
+/* ===== Footer (con Iconos) ===== */
 footer {
     background-color: #1a2233;
     color: #fff;
@@ -72,15 +72,15 @@ footer {
     margin-top: 40px;
     font-family: Arial, sans-serif;
     border-top: 1px solid #1e293b;
-    text-align: center; /* Centramos todo el contenido */
+    text-align: center;
 }
 
 footer .footer-content {
-    max-width: 600px; /* Reducimos el ancho para que el contenido se apile */
+    max-width: 600px;
     margin: 0 auto;
     display: flex;
-    flex-direction: column; /* Elementos apilados verticalmente */
-    align-items: center; /* Centramos los elementos */
+    flex-direction: column;
+    align-items: center;
     gap: 30px;
 }
 
@@ -101,7 +101,7 @@ footer .footer-content {
     color: #fff;
     margin-top: 15px;
     margin-bottom: 5px;
-    text-align: left; /* Alineamos las etiquetas a la izquierda */
+    text-align: left;
 }
 
 .form-container input,
@@ -146,13 +146,18 @@ footer .footer-content {
     margin: 0;
 }
 
-.info-container a {
-    color: #4da6ff;
+/* Estilo para los iconos */
+.social-links a, .contact-info a {
+    color: #4da6ff; /* Color de los iconos y enlaces */
     text-decoration: none;
     font-weight: bold;
+    display: inline-flex; /* Permite alinear el icono y el texto */
+    align-items: center;
+    gap: 8px; /* Espacio entre el icono y el texto */
+    margin: 0 5px;
 }
 
-.info-container a:hover {
+.social-links a:hover, .contact-info a:hover {
     text-decoration: underline;
 }
 
