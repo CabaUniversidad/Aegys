@@ -44,21 +44,25 @@ body {
 
 /* marca (logo + texto) */
 .brand{
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--fg);
-  text-decoration: none;
-  font-weight: 700;
-  letter-spacing: .2px;
+  gap: 12px;
 }
-.brand__logo{
-  width: clamp(28px,6vw,40px);
-  height: clamp(28px,6vw,40px);
-  object-fit: contain;
-  display: block;
+.brand__text{
+  color: var(--fg);
+  font-weight: 800;
 }
 
+.brand__logo{
+  width: 55px;          /* sube el tamaño */
+  height: 55px;
+  object-fit: contain;
+  display: block;
+
+  /* realce */
+  border-radius: 9999px;                 /* círculo */
+  padding: 4px;                          /* separa el PNG del borde */
+  background: rgba(255,255,255,0.08);    /* “pill” suave */
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.12);
+}
 /* nav horizontal */
 .site-nav{ display: block; } /* el flex va en el UL */
 .site-nav ul{
