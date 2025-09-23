@@ -12,6 +12,38 @@ body {
 
 /* ===== Header ===== */
 /* ===== Header base mejorado ===== */
+/* ===== Tema CLARO (override por atributo) ===== */
+:root[data-theme="light"]{
+  --bg: #f7fafc;        /* fondo */
+  --fg: #0f172a;        /* texto */
+  --line: #cbd5e1;      /* bordes */
+  --brand: #0ea5e9;     /* acento */
+}
+
+/* Transición suave de colores */
+html, body, .site-header {
+  transition: background-color .2s ease, color .2s ease;
+}
+
+/* Botón del switch */
+.theme-toggle{
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--fg);
+  padding: 6px 10px;
+  border-radius: 9999px;
+  cursor: pointer;
+  line-height: 1;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+.theme-toggle:hover{
+  background: rgba(56,189,248,.10);
+}
+
+
+
 .site-header{
   --hdr-h: 64px;
   position: sticky;
