@@ -5,7 +5,7 @@
     align-items: flex-start;
     gap: 40px;
     margin-top: 40px;
-    flex-wrap: wrap; /* Para que se adapte en pantallas pequeñas */
+    flex-wrap: wrap; 
 }
 
 /* ===== Sección de productos ===== */
