@@ -48,3 +48,25 @@
     margin-top: 15px;
     color: #222;
 }
+
+button {
+    background-color: #0c1a3f;
+    /* azul oscuro */
+    color: var(--fg);
+    /* color de texto claro, definido en :root */
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 6px rgba(8, 20, 60, 0.6);
+}
+
+button:hover,
+button:focus {
+    background-color: #1347a3;
+    /* azul más claro al hover/focus */
+    outline: none;
+    box-shadow: 0 0 8px #38bdf8;
+}
