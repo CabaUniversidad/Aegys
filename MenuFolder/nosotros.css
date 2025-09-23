@@ -1,68 +1,67 @@
 body {
     font-family: Arial, sans-serif;
-    background: #f9f9f9;
-    color: #333;
+    background: #f4f7fc;
+    color: #222;
     margin: 0;
     padding: 0;
 }
 
-header,
-footer {
+header {
     background-color: #004aad;
     color: white;
-    padding: 20px 0;
+    padding: 30px 0;
     text-align: center;
 }
 
-header a.brand {
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-}
-
-header a.brand img {
-    height: 40px;
-}
-
-nav.site-nav ul {
+.site-nav ul {
     list-style: none;
+    margin: 20px auto;
     padding: 0;
-    margin: 15px 0 0 0;
     display: flex;
-    justify-content: center;
-    gap: 25px;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
 }
 
-nav.site-nav a {
+.site-nav a {
     color: white;
     text-decoration: none;
     font-weight: 600;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: background 0.3s;
 }
 
-nav.site-nav a.active {
-    text-decoration: underline;
+.site-nav a:hover,
+.site-nav a.active {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 main {
     max-width: 900px;
-    margin: 30px auto;
-    padding: 0 15px;
+    margin: 40px auto;
+    padding: 25px 30px;
     background: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 74, 173, 0.15);
+    border-radius: 12px;
 }
 
 h1,
-h2 {
+h2,
+h3 {
     color: #004aad;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
 }
 
 section {
-    margin-bottom: 30px;
+    margin-bottom: 35px;
+    line-height: 1.6;
 }
 
 .mision-vision {
@@ -73,50 +72,74 @@ section {
 
 .mision,
 .vision {
-    flex: 1 1 300px;
-    background: #e6f0ff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: inset 0 0 10px rgba(0, 74, 173, 0.2);
+    flex: 1 1 45%;
+    background: #e8f0fe;
+    padding: 25px 20px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 15px rgba(0, 74, 173, 0.25);
 }
 
-.equipo {
+.nuestro-equipo {
     display: flex;
-    gap: 20px;
     flex-wrap: wrap;
+    gap: 25px;
     justify-content: center;
 }
 
 .miembro {
-    background: #f0f4ff;
-    border-radius: 8px;
+    background: #f3f8ff;
+    border-radius: 12px;
+    padding: 20px;
+    width: 180px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
     text-align: center;
-    padding: 15px;
-    max-width: 180px;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.miembro img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
+.miembro:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 74, 173, 0.2);
 }
 
 .contacto {
-    background: #e6f0ff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: inset 0 0 10px rgba(0, 74, 173, 0.2);
+    background: #e8f0fe;
+    padding: 25px 20px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 15px rgba(0, 74, 173, 0.25);
+}
+
+.contacto ul {
+    padding-left: 20px;
+    list-style-type: disc;
 }
 
 .contacto a {
     color: #004aad;
-    font-weight: 600;
     text-decoration: none;
+    font-weight: 600;
 }
 
 .contacto a:hover {
     text-decoration: underline;
+}
+
+footer {
+    background-color: #004aad;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .mision-vision {
+        flex-direction: column;
+    }
+
+    .miembro {
+        width: 100%;
+        max-width: 300px;
+    }
 }
