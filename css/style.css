@@ -229,7 +229,7 @@ button { cursor: pointer; }
 
 /* ===== Footer (estilo de la imagen) ===== */
 .site-footer {
-    background-color: #1c1c1c; /* Fondo oscuro principal */
+    background-color: #020a24; /* Fondo oscuro principal */
     color: #fff;
     padding: 20px 0;
 }
@@ -327,7 +327,7 @@ button { cursor: pointer; }
 
 /* Barra de derechos de autor */
 .copyright-bar {
-    background-color: #333; /* Fondo más oscuro para la barra inferior */
+    background-color: #080224; /* Fondo más oscuro para la barra inferior */
     text-align: center;
     padding: 10px 0;
     font-size: 0.8em;
