@@ -239,6 +239,76 @@ footer .footer-content {
     color: #888;
     margin-top: 20px;
 }
+/* Estilo del botón del icono de mensaje */
+.toggle-form {
+    position: fixed; /* Lo fija en una posición de la pantalla */
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Icono circular */
+    background-color: #4da6ff;
+    color: #fff;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+/* Estilo del formulario emergente */
+.form-popup {
+    display: none; /* Por defecto, el formulario está oculto */
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 300px;
+    background-color: #1a2233;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.form-popup h2 {
+    color: #fff;
+    margin-top: 0;
+}
+
+.form-popup label {
+    color: #fff;
+}
+
+.form-popup input, .form-popup textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #4a5568;
+    background-color: #2d3748;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.form-popup button[type="submit"] {
+    background-color: #4da6ff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Botón para cerrar el formulario */
+.close-form {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+}
 /* Estilo general del carrito */
 #carrito {
   background-color: #f9f9f9;
