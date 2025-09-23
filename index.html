@@ -16,9 +16,16 @@
 <header class="site-header">
     <div class="container header__wrap">
       <a class="brand" href="#">
-        <!-- Si no tienes logo.svg, deja solo el texto -->
-        <img src="assets/img/logo.png" alt="" aria-hidden="true"> 
-        <span class="brand__text">Tienda Electronica Basica</span>
+        <img
+          class="brand__logo"
+          src="imagenes_logo/logo.png"
+          srcset="imagenes_logo/logo.png 1x, imagenes_logo/logo@2x.png 2x"
+          width="40" height="40"
+          alt=""
+          aria-hidden="true"
+          decoding="async"
+        >
+        <span class="brand__text">Tienda Electrónica Básica</span>
       </a>
 
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
