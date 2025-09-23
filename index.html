@@ -1,5 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Básica</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/carrito.css" />
+  </head>
+  <body>
+
+    <header>
+      <h1>Tienda Básica</h1>
+    </header>
+
+    <main>
+      <section id="productos">
+        <h2>Productos disponibles</h2>
+
+        <article class="producto">
+          <p>Producto 1 - $10</p>
+          <button onclick="agregarAlCarrito(1)" data-id="1"
+            data-nombre="Producto 1" data-precio="10">Agregar al
+            carrito</button>
+        </article>
+
+        <article class="producto">
+          <p>Producto 2 - $15</p>
+          <button onclick="agregarAlCarrito(2)" data-id="2"
+            data-nombre="Producto 2" data-precio="15">Agregar al
+            carrito</button>
+        </article>
+
+        <article class="producto">
+          <p>Producto 3 - $20</p>
+          <button onclick="agregarAlCarrito(3)" data-id="3"
+            data-nombre="Producto 3" data-precio="20">Agregar al
+            carrito</button>
+        </article>
+
+      </section>
+
+      <section id="carrito">
+        <h2>Carrito de Compras</h2>
+
+        <ul id="lista-carrito">
+          <li>
+            <img src="imagenes_carrito/lapiz.png" alt="Lápiz" />
+            Lápiz 1 - $10
+          </li>
+          <li>
+            <img src="imagenes_carrito/borrador.png" alt="Borrador" />
+            Borrador 2 - $15
+          </li>
+          <li>
+            <img src="imagenes_carrito/tajador.png" alt="Tajador" />
+            Tajador 3 - $20
+          </li>
+          <li>
+            <img src="imagenes_carrito/cuaderno.png" alt="Cuaderno" />
+            Cuaderno 4 - $25
+          </li>
+          <li>
+            <img src="imagenes_carrito/carpeta.png" alt="Carpeta" />
+            Carpeta 5 - $30
+          </li>
+        </ul>
+
+        <p><strong>Total: $<span id="total">0</span></strong></p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+=======
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
