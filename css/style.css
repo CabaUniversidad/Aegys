@@ -10,8 +10,49 @@ body {
 .skip-link { position:absolute; left:-9999px; top:auto; }
 .skip-link:focus { left:12px; top:12px; background:#000; color:#fff; padding:6px 10px; border-radius:6px; }
 
+/* ===== Tema CLARO (override por atributo) ===== */
+:root[data-theme="light"]{
+  --bg: #ffffff;        /* fondo más limpio */
+  --fg: #0b1224;        /* texto más oscuro para contraste */
+  --muted: #475569;     /* textos secundarios */
+  --line: #d7dbe3;      /* bordes más visibles en blanco */
+  --brand: #0ea5e9;     /* acento */
+  --brand-weak: rgba(14,165,233,.12);  /* hover/fondo sutil */
+}
+
+/* Transición suave de colores */
+html, body, .site-header {
+  transition: background-color .2s ease, color .2s ease;
+}
+
+:root[data-theme="light"] .brand__logo{
+  /* ejemplo: */
+  /* content: url("imagenes_logo/logo_dark.png"); */
+  filter: none; /* quita filtros que aclaren */
+}
+/* Botón del switch */
+.theme-toggle{
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--fg);
+  padding: 6px 10px;
+  border-radius: 9999px;
+  cursor: pointer;
+  line-height: 1;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+.theme-toggle:hover{
+  background: rgba(56,189,248,.10);
+}
+
+
+
 /* ===== Header ===== */
 /* ===== Header base mejorado ===== */
+
+
 .site-header{
   --hdr-h: 64px;
   position: sticky;
@@ -48,9 +89,9 @@ body {
 }
 .brand__text{
   color: var(--fg);
-  font-weight: 800;
   font-size: 1.25rem;
-  line-height: 1;
+  font-weight: 600;
+  line-height: 1.1;
 }
 
 .brand__logo{
