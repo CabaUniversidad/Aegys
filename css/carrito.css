@@ -1,6 +1,66 @@
-/* === Carrito mejorado === */
+/* ===== Contenedor general ===== */
+.contenido-central {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap; /* Para que se adapte en pantallas pequeñas */
+}
+
+/* ===== Sección de productos ===== */
+#productos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+#productos h2 {
+    text-align: center;
+    color: var(--brand);
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.producto {
+    background: #0b1224;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.producto:hover {
+    transform: translateY(-4px);
+}
+
+/* Botón dentro del producto */
+.producto button {
+    background-color: rgba(56, 189, 248, 0.15);
+    color: var(--fg);
+    border: 2px solid rgba(56, 189, 248, 0.4);
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 2px 6px rgba(56, 189, 248, 0.3);
+}
+
+.producto button:hover {
+    background-color: rgba(56, 189, 248, 0.5);
+    color: #fff;
+    border-color: var(--brand);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.7);
+    transform: translateY(-2px);
+}
+
+/* ===== Carrito mejorado ===== */
 #carrito {
-    background-color: #1e293b; /* Fondo oscuro */
+    background-color: #1e293b;
     border: 1px solid var(--line);
     border-radius: 12px;
     padding: 24px;
@@ -67,4 +127,17 @@
     color: var(--brand);
     border-top: 1px solid var(--line);
     padding-top: 10px;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 768px) {
+    .contenido-central {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #productos, #carrito {
+        max-width: 100%;
+        width: 100%;
+    }
 }
