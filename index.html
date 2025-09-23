@@ -3,11 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Ventas Básicas</title>
-  <link rel="stylesheet" href="./css/style.css" />
-
-  <link rel="stylesheet" href="./css/style.css" />
-
-  <link rel="stylesheet" href="styles.css" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="css/cartas.css" />
 
   <link rel="stylesheet" href="css/style.css" />
@@ -96,47 +92,7 @@
       <button onclick="agregarAlCarrito()">Agregar al carrito</button>
     </div>
   <p>Productos en carrito: <span id="contador">0</span></p>
-  <footer>
-  <hr>
-  <p><strong>TIENDA BÁSICA</strong></p>
-
-  <nav>
-    <p>
-      <a href="#">INICIO</a> |
-      <a href="#">PRODUCTOS</a> |
-      <a href="#">CONTACTO</a>
-    </p>
-  </nav>
-
-  <p>SÍGUENOS EN:
-    <a href="#">FACEBOOK</a>,
-    <a href="#">INSTAGRAM</a>,
-    <a href="#">TWITTER</a>
-  </p>
-
-  <p>CONTACTO: <a href="mailto:INFO@TIENDABASICA.COM">INFO@TIENDABASICA.COM</a></p>
-
-  <form>
-    <h2>ENVÍA TU MENSAJE</h2>
-    
-    <label for="nombre">NOMBRE:</label><br>
-    <input type="text" id="nombre" name="nombre" required><br><br>
-
-    <label for="correo">CORREO ELECTRÓNICO:</label><br>
-    <input type="email" id="correo" name="correo" required><br><br>
-
-    <label for="mensaje">MENSAJE:</label><br>
-    <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br><br>
-
-    <button type="submit">ENVIAR</button>
-  </form>
-
-  <p>&copy; 2025 TIENDA BÁSICA. TODOS LOS DERECHOS RESERVADOS.</p>
-</footer>
-
-
-
-  <script src="./js/script.js"></script>
+  
 
   <section id="carrito">
     <h2>Carrito de Compras</h2>
@@ -183,7 +139,54 @@
   <input class="pagina-input" value="1"></input>
   <button class="pagina-btn">></button>
   </div>
-  <script src="script.js"></script>
+  
+
+<footer>
+    <div class="footer-content">
+        
+        <div class="info-container">
+            <h3>TIENDA BÁSICA</h3>
+            <p>
+                <a href="#">INICIO</a> |
+                <a href="#">PRODUCTOS</a> |
+                <a href="#">CONTACTO</a>
+            </p>
+            <div class="social-links">
+                <p>SÍGUENOS EN:
+                    <a href="#"><i class="fab fa-facebook-f"></i>FACEBOOK</a>,
+                    <a href="#"><i class="fab fa-instagram"></i>INSTAGRAM</a>,
+                    <a href="#"><i class="fab fa-twitter"></i>TWITTER</a>
+                </p>
+            </div>
+            <div class="contact-info">
+                <p>CONTACTO: <a href="mailto:INFO@TIENDABASICA.COM"><i class="fas fa-envelope"></i>INFO@TIENDABASICA.COM</a></p>
+            </div>
+        </div>
+        
+        <div class="form-container">
+            <h2>ENVÍA TU MENSAJE</h2>
+            <form>
+                <label for="nombre">NOMBRE:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="correo">CORREO ELECTRÓNICO:</label>
+                <input type="email" id="correo" name="correo" required>
+                
+                <label for="mensaje">MENSAJE:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                
+                <button type="submit">ENVIAR</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="copyright">
+        <p>&copy; 2025 TIENDA BÁSICA. TODOS LOS DERECHOS RESERVADOS.</p>
+    </div>
+</footer>
+
+
+  <script src="./js/script.js"></script>
 
 </body>
 </html>
