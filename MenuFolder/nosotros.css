@@ -1,0 +1,111 @@
+/* ===== Colores y base general ===== */
+:root {
+    --bg: #0f172a;
+    --fg: #e2e8f0;
+    --line: #1e293b;
+    --brand: #38bdf8;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, Arial, sans-serif;
+    color: var(--fg);
+    background: var(--bg);
+    line-height: 1.6;
+}
+
+h1,
+h2 {
+    color: var(--fg);
+    margin-bottom: 10px;
+}
+
+/* ===== Header ===== */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #0b1224cc;
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+}
+
+.wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    color: var(--fg);
+    font-weight: bold;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+/* ===== Menú Horizontal ===== */
+.site-nav ul {
+    display: flex;
+    gap: 18px;
+    list-style: none;
+}
+
+.site-nav a {
+    color: var(--fg);
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+    color: var(--brand);
+    background: rgba(56, 189, 248, 0.08);
+}
+
+/* ===== Contenido Principal ===== */
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #0b1224;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+a {
+    color: var(--brand);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Footer ===== */
+footer {
+    background: #1a2233;
+    color: #ccc;
+    padding: 25px;
+    text-align: center;
+    border-top: 1px solid var(--line);
+    font-size: 0.9rem;
+}

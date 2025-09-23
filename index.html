@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ventas Básicas</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="css/cartas.css" />
@@ -11,27 +12,42 @@
 
 </head>
 <header class="site-header">
-  <div class="container header__wrap">
-    <a class="brand" href="#">
-      <img class="brand__logo" src="imagenes_logo/logo.png" width="65" height="65" alt="" aria-hidden="true"
-        decoding="async">
-      <span class="brand__text">Tienda Electrónica Básica</span>
-    </a>
 
-    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
-      ☰
-    </button>
+    <div class="container header__wrap">
+      <a class="brand" href="#">
+        <img
+          class="brand__logo"
+          src="imagenes_logo/logo.png"
+          alt=""
+          aria-hidden="true"
+          decoding="async"
+          >
+          <span class="brand__text">Tienda Electrónica Básica</span>
+        </a>
 
-    <nav id="site-nav" class="site-nav" aria-label="Navegación principal">
-      <ul>
-        <li><a href="#productos">PRODUCTOS</a></li>
-        <li><a href="#nosotros">NOSOTROS</a></li>
-        <li><a href="#servicios">SERVICIOS</a></li>
-        <li><a href="#carrito">CARRITO</a></li>
-        <li><a href="#contacto">CONTACTO</a></li>
-      </ul>
-    </nav>
-  </div>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+        ☰
+      </button>
+
+      <button id="theme-toggle"
+        class="theme-toggle"
+        type="button"
+        aria-pressed="false"
+        aria-label="Cambiar de tema">
+
+          🌙
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="#productos">PRODUCTOS</a></li>
+          <li><a href="MenuFolder/nosotros.html">NOSOTROS</a></li>
+          <li><a href="#servicios">SERVICIOS</a></li>
+          <li><a href="#carrito">CARRITO</a></li>
+          <li><a href="#contacto">CONTACTO</a></li>
+        </ul>
+      </nav>
+    </div>
 </header>
 
 <body>
