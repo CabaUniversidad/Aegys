@@ -1,15 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ventas Básicas</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="css/cartas.css" />
+
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="css/carrito.css" />
+
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
 </head>
 <header class="site-header">
+
     <div class="container header__wrap">
       <a class="brand" href="#">
         <img
@@ -30,7 +40,8 @@
         class="theme-toggle"
         type="button"
         aria-pressed="false"
-        aria-label="Cambiar a tema claro">
+        aria-label="Cambiar de tema">
+
           🌙
       </button>
 
@@ -42,18 +53,28 @@
           <li><a href="#carrito">CARRITO</a></li>
           <li><a href="#contacto">CONTACTO</a></li>
         </ul>
+        
       </nav>
+     
+       <div class="barra-busqueda">
+        <input type="text" placeholder="Buscar productos..." id="input-busqueda">
+        <button onclick="buscarProducto()" aria-label="Buscar">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
     </div>
 </header>
+
 <body>
   <h1>Tienda Básica</h1>
 
   <section class="productos">
     <div class="tarjeta-producto">
       <div class="imagen-producto">
-        <img src="https://th.bing.com/th/id/OIP.3E91_zwT-5DfRnmNqigYTQHaHa?w=199&h=199&c=7&r=0&o=7&pid=1.7&rm=3" alt="Producto 1">
+        <img src="https://th.bing.com/th/id/OIP.3E91_zwT-5DfRnmNqigYTQHaHa?w=199&h=199&c=7&r=0&o=7&pid=1.7&rm=3"
+          alt="Producto 1">
       </div>
-      <h3>Producto 1</h3>
+      <h3>Cables Macho-Embra</h3>
       <p>Descripción breve del producto 1.</p>
       <p class="precio">$10</p>
       <button onclick="agregarAlCarrito()">Agregar al carrito</button>
@@ -61,9 +82,10 @@
 
     <div class="tarjeta-producto">
       <div class="imagen-producto">
-        <img src="https://th.bing.com/th/id/OIP.vpr1q9qbGdv5LUOZly6uFQHaHa?w=199&h=199&c=7&r=0&o=7&pid=1.7&rm=3" alt="Producto 2">
+        <img src="https://th.bing.com/th/id/OIP.vpr1q9qbGdv5LUOZly6uFQHaHa?w=199&h=199&c=7&r=0&o=7&pid=1.7&rm=3"
+          alt="Producto 2">
       </div>
-      <h3>Producto 2</h3>
+      <h3>Cable Arduino</h3>
       <p>Descripción breve del producto 2.</p>
       <p class="precio">$15</p>
       <button onclick="agregarAlCarrito()">Agregar al carrito</button>
@@ -71,9 +93,10 @@
 
     <div class="tarjeta-producto">
       <div class="imagen-producto">
-        <img src="https://th.bing.com/th/id/OIP.4AtfMYZvut1doLlZsE-5qgHaHa?w=199&h=199&c=7&r=0&o=7&pid=1.7&rm=3" alt="Producto 3">
+        <img src="https://th.bing.com/th/id/OIP.4AtfMYZvut1doLlZsE-5qgHaHa?w=199&h=199&c=7&r=0&o=7&pid=1.7&rm=3"
+          alt="Producto 3">
       </div>
-      <h3>Producto 3</h3>
+      <h3>Cables Macho-Macho</h3>
       <p>Descripción breve del producto 3.</p>
       <p class="precio">$20</p>
       <button onclick="agregarAlCarrito()">Agregar al carrito</button>
@@ -81,9 +104,10 @@
 
     <div class="tarjeta-producto">
       <div class="imagen-producto">
-        <img src="https://th.bing.com/th/id/OIP.9oIrehBvCXImShNH01FDEwHaHa?w=199&h=199&c=7&r=0&o=7&pid=1.7&rm=3" alt="Producto 1">
+        <img src="https://th.bing.com/th/id/OIP.9oIrehBvCXImShNH01FDEwHaHa?w=199&h=199&c=7&r=0&o=7&pid=1.7&rm=3"
+          alt="Producto 1">
       </div>
-      <h3>Producto 4</h3>
+      <h3>Cable Arduino con USB</h3>
       <p>Descripción breve del producto 4.</p>
       <p class="precio">$10</p>
       <button onclick="agregarAlCarrito()">Agregar al carrito</button>
@@ -91,9 +115,10 @@
 
     <div class="tarjeta-producto">
       <div class="imagen-producto">
-        <img src="https://th.bing.com/th/id/OIP.ByOXwoJcljMluo1OqQtJlQHaHa?w=198&h=199&c=7&r=0&o=7&pid=1.7&rm=3" alt="Producto 2">
+        <img src="https://th.bing.com/th/id/OIP.ByOXwoJcljMluo1OqQtJlQHaHa?w=198&h=199&c=7&r=0&o=7&pid=1.7&rm=3"
+          alt="Producto 2">
       </div>
-      <h3>Producto 5</h3>
+      <h3>Cables Embra-Embra</h3>
       <p>Descripción breve del producto 5.</p>
       <p class="precio">$15</p>
       <button onclick="agregarAlCarrito()">Agregar al carrito</button>
@@ -102,6 +127,80 @@
     <div class="tarjeta-producto">
       <div class="imagen-producto">
         <img src="https://th.bing.com/th/id/OIP.vMEbRGNsFGr_1wi-IZMVxAHaHa?w=178&h=180&c=7&r=0&o=5&pid=1.7" alt="Producto 3">
+      </div>
+      <h3>Placa Arduino</h3>
+      <p>Descripción breve del producto 6.</p>
+      <p class="precio">$20</p>
+      <button onclick="agregarAlCarrito()">Agregar al carrito</button>
+    </div>
+    <div class="paginacion">
+      <button class="pagina-btn"><</button>
+      <input class="pagina-input" value="1"></input>
+      <button class="pagina-btn">></button>
+    </div>
+  
+
+  </section>
+  <p>Productos en carrito: <span id="contador">0</span></p>
+  <footer>
+  <hr>
+  <p><strong>TIENDA BÁSICA</strong></p>
+
+  <nav>
+    <p>
+      <a href="#">INICIO</a> |
+      <a href="#">PRODUCTOS</a> |
+      <a href="#">CONTACTO</a>
+    </p>
+  </nav>
+
+  <p>SÍGUENOS EN:
+    <a href="#">FACEBOOK</a>,
+    <a href="#">INSTAGRAM</a>,
+    <a href="#">TWITTER</a>
+  </p>
+    <p>Productos en carrito: <span id="contador">0</span></p>
+
+
+
+    <section id="carrito">
+      <h2>Carrito de Compras</h2>
+      <ul id="lista-carrito">
+        <li>
+          <img src="imagenes_carrito/lapiz.png" alt="Imagen de Lapiz 1" />
+          Lapiz 1 - $10
+        </li>
+        <li>
+          <img src="imagenes_carrito/borrador.png" alt="Imagen de Borrador 2" />
+          Borrador 2 - $15
+        </li>
+        <li>
+          <img src="imagenes_carrito/tajador.png" alt="Imagen de Tajador 3" />
+          Tajador 3 - $20
+        </li>
+        <li>
+          <img src="imagenes_carrito/cuaderno.png" alt="Imagen de Cuaderno 4" />
+          Cuaderno 4 - $25
+        </li>
+        <li>
+          <img src="imagenes_carrito/carpeta.png" alt="Imagen de Carpeta 5" />
+          Carpeta 5 - $30
+      </li>
+    </ul>
+    <p><strong>Total: $<span id="total">0</span></strong></p>
+  </section>
+  <script src="script.js"></script>
+  <script src="./js/busqueda.js"></script>
+
+        </li>
+      </ul>
+      <p><strong>Total: $<span id="total">0</span></strong></p>
+    </section>
+
+    <div class="tarjeta-producto">
+      <div class="imagen-producto">
+        <img src="https://th.bing.com/th/id/OIP.vMEbRGNsFGr_1wi-IZMVxAHaHa?w=178&h=180&c=7&r=0&o=5&pid=1.7"
+          alt="Producto 3">
       </div>
       <h3>Producto 6</h3>
       <p>Descripción breve del producto 6.</p>
@@ -112,11 +211,11 @@
   </section>
 
   <div class="paginacion">
-  <button class="pagina-btn"><</button>
-  <input class="pagina-input" value="1"></input>
-  <button class="pagina-btn">></button>
+    <button class="pagina-btn">
+      << /button>
+        <input class="pagina-input" value="1"></input>
+        <button class="pagina-btn">></button>
   </div>
-  
 
 <div class="contenido-central">
   <!-- Sección de productos -->
@@ -182,52 +281,65 @@
 </div>
 
 
-<footer>
-    <div class="footer-content">
-        
-        <div class="info-container">
-            <h3>TIENDA BÁSICA</h3>
-            <p>
-                <a href="#">INICIO</a> |
-                <a href="#">PRODUCTOS</a> |
-                <a href="#">CONTACTO</a>
-            </p>
-            <div class="social-links">
-                <p>SÍGUENOS EN:
-                    <a href="#"><i class="fab fa-facebook-f"></i>FACEBOOK</a>,
-                    <a href="#"><i class="fab fa-instagram"></i>INSTAGRAM</a>,
-                    <a href="#"><i class="fab fa-twitter"></i>TWITTER</a>
-                </p>
+  <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section contact-info-col">
+                <div class="robot-icon">
+                    <img src="URL_DE_TU_IMAGEN_DE_ROBOT.png" alt="Icono de robot">
+                </div>
+                <div class="contact-items">
+                    <p><i class="fas fa-phone-alt"></i> 641-754-0072</p>
+                    <p><i class="fas fa-envelope"></i> GavinEMaki@myrfa.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 1718 Park Boulevard Marshalltown, IA 50158</p>
+                </div>
             </div>
-            <div class="contact-info">
-                <p>CONTACTO: <a href="mailto:INFO@TIENDABASICA.COM"><i class="fas fa-envelope"></i>INFO@TIENDABASICA.COM</a></p>
-            </div>
-        </div>
-        
-        <div class="form-container">
-            <h2>ENVÍA TU MENSAJE</h2>
-            <form>
-                <label for="nombre">NOMBRE:</label>
-                <input type="text" id="nombre" name="nombre" required>
-                
-                <label for="correo">CORREO ELECTRÓNICO:</label>
-                <input type="email" id="correo" name="correo" required>
-                
-                <label for="mensaje">MENSAJE:</label>
-                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-                
-                <button type="submit">ENVIAR</button>
-            </form>
-        </div>
-    </div>
-    
-    <div class="copyright">
-        <p>&copy; 2025 TIENDA BÁSICA. TODOS LOS DERECHOS RESERVADOS.</p>
-    </div>
-</footer>
 
+            <div class="footer-section links-col">
+                <h4>ENLACES</h4>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section social-col">
+                <h4>REDES SOCIALES</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            </div>
+        
+        <div class="copyright-bar">
+            <p>&copy; 2025 TIENDA BÁSICA. TODOS LOS DERECHOS RESERVADOS.</p>
+        </div>
+    </footer>
+
+    <button class="toggle-form">
+        <i class="fas fa-comment"></i>
+    </button>
+    <div class="form-popup">
+        <button class="close-form">&times;</button>
+        <h2>ENVÍA TU MENSAJE</h2>
+        <form class="contact-form">
+            <label for="nombre">NOMBRE:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <label for="correo">CORREO ELECTRÓNICO:</label>
+            <input type="email" id="correo" name="correo" required>
+            <label for="mensaje">MENSAJE:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+            <button type="submit">ENVIAR</button>
+        </form>
+    </div> 
 
   <script src="./js/script.js"></script>
 
 </body>
+
 </html>

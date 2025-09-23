@@ -10,8 +10,49 @@ body {
 .skip-link { position:absolute; left:-9999px; top:auto; }
 .skip-link:focus { left:12px; top:12px; background:#000; color:#fff; padding:6px 10px; border-radius:6px; }
 
+/* ===== Tema CLARO (override por atributo) ===== */
+:root[data-theme="light"]{
+  --bg: #ffffff;        /* fondo más limpio */
+  --fg: #0b1224;        /* texto más oscuro para contraste */
+  --muted: #475569;     /* textos secundarios */
+  --line: #d7dbe3;      /* bordes más visibles en blanco */
+  --brand: #0ea5e9;     /* acento */
+  --brand-weak: rgba(14,165,233,.12);  /* hover/fondo sutil */
+}
+
+/* Transición suave de colores */
+html, body, .site-header {
+  transition: background-color .2s ease, color .2s ease;
+}
+
+:root[data-theme="light"] .brand__logo{
+  /* ejemplo: */
+  /* content: url("imagenes_logo/logo_dark.png"); */
+  filter: none; /* quita filtros que aclaren */
+}
+/* Botón del switch */
+.theme-toggle{
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--fg);
+  padding: 6px 10px;
+  border-radius: 9999px;
+  cursor: pointer;
+  line-height: 1;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+.theme-toggle:hover{
+  background: rgba(56,189,248,.10);
+}
+
+
+
 /* ===== Header ===== */
 /* ===== Header base mejorado ===== */
+
+
 .site-header{
   --hdr-h: 64px;
   position: sticky;
@@ -48,9 +89,9 @@ body {
 }
 .brand__text{
   color: var(--fg);
-  font-weight: 800;
   font-size: 1.25rem;
-  line-height: 1;
+  font-weight: 600;
+  line-height: 1.1;
 }
 
 .brand__logo{
@@ -186,50 +227,157 @@ button { cursor: pointer; }
 
 
 
-/* ===== Footer (con Iconos Coloridos) ===== */
-footer {
-    background-color: #1a2233;
+/* ===== Footer (estilo de la imagen) ===== */
+.site-footer {
+    background-color: #1c1c1c; /* Fondo oscuro principal */
     color: #fff;
-    padding: 30px 16px;
-    margin-top: 40px;
-    font-family: Arial, sans-serif;
-    border-top: 1px solid #1e293b;
-    text-align: center;
+    padding: 20px 0;
 }
 
-footer .footer-content {
-    max-width: 600px;
-    margin: 0 auto;
+.footer-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* Contenedor del formulario */
-.form-container {
-    width: 100%;
+.footer-section {
+    flex-basis: 25%;
+    padding: 0 15px;
 }
 
-.form-container h2 {
+/* Estilo para los títulos de sección */
+.footer-section h4 {
     color: #fff;
-    font-size: 1.5em;
+    font-size: 1em;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-.form-container label {
-    display: block;
-    color: #fff;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    text-align: left;
+/* Columna del robot e información de contacto */
+.contact-info-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-.form-container input,
-.form-container textarea {
+.robot-icon img {
+    max-width: 100px;
+    margin-bottom: 15px;
+}
+
+.contact-items p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.contact-items i {
+    color: #fff;
+    margin-right: 8px;
+}
+
+/* Columna de enlaces */
+.links-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.links-col li a {
+    color: #a0a0a0;
+    text-decoration: none;
+    line-height: 1.8;
+}
+
+.links-col li a:hover {
+    color: #fff;
+}
+
+/* Columna de redes sociales */
+.social-icons a {
+    color: #fff;
+    font-size: 1.5em;
+    margin: 0 10px;
+}
+
+/* Columna de newsletter */
+.newsletter-form input {
     width: 100%;
+    background-color: #333;
+    border: none;
     padding: 10px;
+    color: #fff;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.subscribe-button {
+    width: 100%;
+    background-color: #e8a2a2; /* Rosa del ejemplo */
+    border: none;
+    color: #fff;
+    padding: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Barra de derechos de autor */
+.copyright-bar {
+    background-color: #333; /* Fondo más oscuro para la barra inferior */
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.8em;
+}
+
+/* ===== Formulario Desplegable ===== */
+.toggle-form {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #4da6ff;
+    color: #fff;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 300px;
+    background-color: #1a2233;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.form-popup h2 {
+    color: #fff;
+    margin-top: 0;
+}
+
+.form-popup label {
+    color: #fff;
+    display: block;
+    margin-top: 10px;
+}
+
+.form-popup input, .form-popup textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
     border: 1px solid #4a5568;
     background-color: #2d3748;
     color: #fff;
@@ -237,82 +385,24 @@ footer .footer-content {
     box-sizing: border-box;
 }
 
-.form-container button {
+.form-popup button[type="submit"] {
     background-color: #4da6ff;
     color: #fff;
-    padding: 10px 20px;
     border: none;
+    padding: 10px 15px;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 1em;
-    font-weight: bold;
-    margin-top: 20px;
 }
 
-/* Contenedor de la información de la tienda */
-.info-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-.info-container h3 {
-    margin: 0 0 10px;
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-.info-container p {
-    margin: 0;
-}
-
-/* Estilo general para los enlaces de iconos */
-.social-links a, .contact-info a {
-    color: #fff; /* El texto del enlace sigue siendo blanco */
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin: 0 5px;
-}
-
-.social-links a:hover, .contact-info a:hover {
-    text-decoration: underline;
-}
-
-/* Colores específicos para los iconos de redes sociales */
-.social-links a .fa-facebook-f {
-    color: #3b5998; /* Color de Facebook */
-}
-
-.social-links a .fa-instagram {
-    color: #E1306C; /* Color de Instagram */
-    /* Para un degradado (más real, pero más complejo):
-    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    */
-}
-
-.social-links a .fa-twitter {
-    color: #1DA1F2; /* Color de Twitter */
-}
-
-/* Color para el icono de correo */
-.contact-info a .fa-envelope {
-    color: #EA4335; /* Un rojo vibrante, similar a Gmail */
-}
-
-/* Derechos de autor */
-.copyright {
-    width: 100%;
-    text-align: center;
-    font-size: 0.8em;
-    color: #888;
-    margin-top: 20px;
+.close-form {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
 }
 /* Estilo general del carrito */
 #carrito {
