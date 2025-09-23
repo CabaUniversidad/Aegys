@@ -64,30 +64,29 @@ button { cursor: pointer; }
 
 
 
-/* ===== Footer (Minimalista) ===== */
+/* ===== Footer (Distribución Vertical y Centrada) ===== */
 footer {
     background-color: #1a2233;
     color: #fff;
-    padding: 20px 16px; /* Reducimos el padding para que sea más compacto */
+    padding: 30px 16px;
     margin-top: 40px;
     font-family: Arial, sans-serif;
     border-top: 1px solid #1e293b;
+    text-align: center; /* Centramos todo el contenido */
 }
 
 footer .footer-content {
-    max-width: 1000px;
+    max-width: 600px; /* Reducimos el ancho para que el contenido se apile */
     margin: 0 auto;
-    display: flex; /* Usamos flexbox para alinear elementos en la misma fila */
-    flex-direction: row; /* Elementos en fila */
-    justify-content: space-between; /* Espacio entre el formulario y la información */
-    align-items: flex-start; /* Alinear arriba */
-    gap: 40px;
+    display: flex;
+    flex-direction: column; /* Elementos apilados verticalmente */
+    align-items: center; /* Centramos los elementos */
+    gap: 30px;
 }
 
 /* Contenedor del formulario */
 .form-container {
-    width: 50%;
-    text-align: left;
+    width: 100%;
 }
 
 .form-container h2 {
@@ -102,6 +101,7 @@ footer .footer-content {
     color: #fff;
     margin-top: 15px;
     margin-bottom: 5px;
+    text-align: left; /* Alineamos las etiquetas a la izquierda */
 }
 
 .form-container input,
@@ -129,12 +129,17 @@ footer .footer-content {
 
 /* Contenedor de la información de la tienda */
 .info-container {
-    width: 50%;
-    text-align: right;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     gap: 10px;
+}
+
+.info-container h3 {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 .info-container p {
@@ -154,7 +159,7 @@ footer .footer-content {
 /* Derechos de autor */
 .copyright {
     width: 100%;
-    text-align: right;
+    text-align: center;
     font-size: 0.8em;
     color: #888;
     margin-top: 20px;
