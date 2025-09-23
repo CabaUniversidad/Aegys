@@ -55,6 +55,7 @@ button:hover {
 
 /* Estilo para la paginación */
 .paginacion {
+  width: 1000px;
   margin-top: 30px;
   text-align: center;
 }
