@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="css/cartas.css" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
 </head>
 <header class="site-header">
@@ -29,12 +31,15 @@
           <li><a href="#carrito">CARRITO</a></li>
           <li><a href="#contacto">CONTACTO</a></li>
         </ul>
+        
       </nav>
-      <div class="barra-busqueda">
+     
+       <div class="barra-busqueda">
         <input type="text" placeholder="Buscar productos..." id="input-busqueda">
-        <button onclick="buscarProducto()">Buscar</button>
+        <button onclick="buscarProducto()" aria-label="Buscar">
+          <i class="fas fa-search"></i>
+        </button>
       </div>
-
     </div>
 </header>
 <body>
