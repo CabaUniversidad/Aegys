@@ -34,6 +34,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+
   // Tema inicial: localStorage > prefers-color-scheme
   const stored = localStorage.getItem(STORAGE_KEY);
   const prefersDark = window.matchMedia?.('(prefers-color-scheme: dark)').matches;

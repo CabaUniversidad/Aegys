@@ -160,55 +160,70 @@
 
 
 
-  <footer>
-    <div class="footer-content">
+  <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section contact-info-col">
+                <div class="robot-icon">
+                    <img src="URL_DE_TU_IMAGEN_DE_ROBOT.png" alt="Icono de robot">
+                </div>
+                <div class="contact-items">
+                    <p><i class="fas fa-phone-alt"></i> 641-754-0072</p>
+                    <p><i class="fas fa-envelope"></i> GavinEMaki@myrfa.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 1718 Park Boulevard Marshalltown, IA 50158</p>
+                </div>
+            </div>
 
-      <div class="info-container">
-        <h3>TIENDA BÁSICA</h3>
-        <p>
-          <a href="#">INICIO</a> |
-          <a href="#">PRODUCTOS</a> |
-          <a href="#">CONTACTO</a>
-        </p>
-        <div class="social-links">
-          <p>SÍGUENOS EN:
-            <a href="#"><span class="icon-bg"><i class="fab fa-facebook-f"></i></span></a>
-            <a href="#"><span class="icon-bg"><i class="fab fa-instagram"></i></span></a>
-            <a href="#"><span class="icon-bg"><i class="fab fa-twitter"></i></span></a>
-          </p>
-        </div>
-        <div class="contact-info">
-          <p>CONTACTO: <a href="mailto:INFO@TIENDABASICA.COM"><span class="icon-bg"><i
-                  class="fas fa-envelope"></i></span></a></p>
-        </div>
-      </div>
+            <div class="footer-section links-col">
+                <h4>ENLACES</h4>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
 
-      <button class="toggle-form">
+            <div class="footer-section social-col">
+                <h4>REDES SOCIALES</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section newsletter-col">
+                <h4>WEEKLY NEWSLETTER</h4>
+                <form class="newsletter-form">
+                    <input type="text" placeholder="Name">
+                    <input type="email" placeholder="Your Email">
+                    <button type="submit" class="subscribe-button">SUBSCRIBE</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="copyright-bar">
+            <p>&copy; All rights reserved 2019</p>
+        </div>
+    </footer>
+
+    <button class="toggle-form">
         <i class="fas fa-comment"></i>
-      </button>
-
-      <div class="form-popup">
-        <h2>ENVÍA TU MENSAJE</h2>
-        <form>
-          <label for="nombre">NOMBRE:</label>
-          <input type="text" id="nombre" name="nombre" required>
-
-          <label for="correo">CORREO ELECTRÓNICO:</label>
-          <input type="email" id="correo" name="correo" required>
-
-          <label for="mensaje">MENSAJE:</label>
-          <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-
-          <button type="submit">ENVIAR</button>
-        </form>
+    </button>
+    <div class="form-popup">
         <button class="close-form">&times;</button>
-      </div>
+        <h2>ENVÍA TU MENSAJE</h2>
+        <form class="contact-form">
+            <label for="nombre">NOMBRE:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <label for="correo">CORREO ELECTRÓNICO:</label>
+            <input type="email" id="correo" name="correo" required>
+            <label for="mensaje">MENSAJE:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+            <button type="submit">ENVIAR</button>
+        </form>
     </div>
-
-    <div class="copyright">
-      <p>&copy; 2025 TIENDA BÁSICA. TODOS LOS DERECHOS RESERVADOS.</p>
-    </div>
-  </footer>
 
   <script src="./js/script.js"></script>
 
