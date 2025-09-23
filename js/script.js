@@ -4,3 +4,5 @@ function agregarAlCarrito() {
   contador++;
   document.getElementById('contador').textContent = contador;
 }
+
+

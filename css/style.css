@@ -1,9 +1,366 @@
+/* ===== Base (unifica el body) ===== */
+:root { --bg:#0f172a; --fg:#e2e8f0; --line:#1e293b; --brand:#38bdf8; }
+* { box-sizing: border-box; }
 body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
+  font-family: system-ui, Arial, sans-serif;
+  margin: 0;                 /* quitamos el margin:20px anterior */
+  color: var(--fg);
+  background: var(--bg);
+}
+.skip-link { position:absolute; left:-9999px; top:auto; }
+.skip-link:focus { left:12px; top:12px; background:#000; color:#fff; padding:6px 10px; border-radius:6px; }
+
+/* ===== Header ===== */
+/* ===== Header base mejorado ===== */
+.site-header{
+  --hdr-h: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(11,18,36,.92);      /* fallback sólido */
+  border-bottom: 1px solid var(--line);
+  transition: background .2s ease, box-shadow .2s ease;
 }
 
+@supports ((backdrop-filter: blur(6px)) or (-webkit-backdrop-filter: blur(6px))){
+  .site-header{
+    background: rgba(11,18,36,.75);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+  }
+}
+
+/* contenedor interno del header (tu HTML usa .container header__wrap) */
+.container.header__wrap{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(8px,1.5vw,12px) clamp(12px,2vw,20px);
+  min-height: var(--hdr-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* marca (logo + texto) */
+.brand{
+  gap: 12px;
+}
+.brand__text{
+  color: var(--fg);
+  font-weight: 800;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.brand__logo{
+  width: 65px;          /* sube el tamaño */
+  height: 65px;
+  object-fit: contain;
+  display: block;
+
+  /* realce */
+  border-radius: 9999px;                 /* círculo */
+  padding: 4px;                          /* separa el PNG del borde */
+  background: rgba(255,255,255,0.08);    /* “pill” suave */
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.12);
+}
+/* nav horizontal */
+.site-nav{ display: block; } /* el flex va en el UL */
+.site-nav ul{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.site-nav a{
+  display: inline-block;
+  color: var(--fg);
+  text-decoration: none;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+.site-nav a:hover{ color: var(--brand); background: rgba(56,189,248,.08); }
+
+/* no usar hamburguesa por ahora */
+.nav-toggle{ display: none !important; }
+
+/* ====== Breakpoint 1: <= 900px (tablet) ====== */
+@media (max-width: 900px){
+  .container.header__wrap{
+    gap: 10px;
+    padding: 8px 14px;
+  }
+  .brand__logo{
+    /* de 65px baja un poco en tablet */
+    width: clamp(44px, 6vw, 56px);
+    height: clamp(44px, 6vw, 56px);
+  }
+  .brand__text{
+    font-size: 1.1rem;
+  }
+  .site-nav ul{
+    gap: 12px;
+  }
+  .site-nav a{
+    padding: 6px 8px;
+  }
+}
+
+
+/* ===== Móvil: mejora posición del logo ===== */
+@media (max-width: 680px){
+  /* El header permite 2 filas */
+  .container.header__wrap{
+    flex-wrap: wrap;
+    row-gap: 10px;                 /* más respiro entre marca y nav */
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  /* 1) Marca (logo + texto) centrada y en su propia fila */
+  .brand{
+    order: 1;                      /* va primero */
+    flex-basis: 100%;              /* ocupa todo el ancho */
+    display: flex;
+    justify-content: center;       /* CENTRA horizontalmente */
+    align-items: center;           /* alinea verticalmente logo/texto */
+    gap: 10px;
+    text-align: center;            /* por si solo queda el texto */
+    padding-block: 4px;            /* evita que “pegue” al borde superior */
+  }
+  .brand__logo{
+    margin: 0;                     /* sin desplazamientos raros */
+    width: clamp(40px, 12vw, 52px);
+    height: clamp(40px, 12vw, 52px);
+    padding: 3px;                  /* pill más discreto en móvil */
+  }
+  .brand__text{
+    font-size: 1rem;
+    line-height: 1.1;
+  }
+
+  /* 2) El nav va debajo y ocupa todo el ancho (sigue horizontal) */
+  .site-nav{
+    order: 3;
+    flex-basis: 100%;
+  }
+  .site-nav ul{
+    justify-content: center;       /* centra los items; usa flex-start si prefieres a la izq */
+    gap: 10px;
+    overflow-x: auto;              /* deslizable si no entra */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+  .site-nav ul::-webkit-scrollbar{ display: none; }
+}
+
+/* ===== Muy pequeño: solo logo (opcional) ===== */
+@media (max-width: 420px){
+  .brand__text{ display: none; }   /* deja solo el isotipo centrado */
+  .brand__logo{
+    width: clamp(40px, 14vw, 48px);
+    height: clamp(40px, 14vw, 48px);
+  }
+}
+/* ====== Detalle nice-to-have: sombra al scrollear ====== */
+.site-header.is-scrolled{ box-shadow: 0 4px 18px rgba(0,0,0,.25); }
+
+/* ===== Contenido ===== */
+main { max-width: 1000px; margin: 0 auto; padding: 16px; }
+h1 { margin: 16px 0; }
+
+/* Productos (mantiene tu estilo original) */
 .producto {
   margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #0b1224;
+}
+button { cursor: pointer; }
+#contador { font-weight: 700; }
+
+
+
+/* ===== Footer (con Iconos Coloridos) ===== */
+footer {
+    background-color: #1a2233;
+    color: #fff;
+    padding: 30px 16px;
+    margin-top: 40px;
+    font-family: Arial, sans-serif;
+    border-top: 1px solid #1e293b;
+    text-align: center;
 }
 
+footer .footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Contenedor del formulario */
+.form-container {
+    width: 100%;
+}
+
+.form-container h2 {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.form-container label {
+    display: block;
+    color: #fff;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.form-container input,
+.form-container textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #4a5568;
+    background-color: #2d3748;
+    color: #fff;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-container button {
+    background-color: #4da6ff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Contenedor de la información de la tienda */
+.info-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-container h3 {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.info-container p {
+    margin: 0;
+}
+
+/* Estilo general para los enlaces de iconos */
+.social-links a, .contact-info a {
+    color: #fff; /* El texto del enlace sigue siendo blanco */
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 5px;
+}
+
+.social-links a:hover, .contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Colores específicos para los iconos de redes sociales */
+.social-links a .fa-facebook-f {
+    color: #3b5998; /* Color de Facebook */
+}
+
+.social-links a .fa-instagram {
+    color: #E1306C; /* Color de Instagram */
+    /* Para un degradado (más real, pero más complejo):
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    */
+}
+
+.social-links a .fa-twitter {
+    color: #1DA1F2; /* Color de Twitter */
+}
+
+/* Color para el icono de correo */
+.contact-info a .fa-envelope {
+    color: #EA4335; /* Un rojo vibrante, similar a Gmail */
+}
+
+/* Derechos de autor */
+.copyright {
+    width: 100%;
+    text-align: center;
+    font-size: 0.8em;
+    color: #888;
+    margin-top: 20px;
+}
+/* Estilo general del carrito */
+#carrito {
+  background-color: #f9f9f9;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Título del carrito */
+#carrito h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Lista de productos */
+#lista-carrito {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Cada producto del carrito */
+#lista-carrito li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+/* Imágenes de los productos */
+#lista-carrito img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+/* Total del carrito */
+#carrito p {
+  text-align: right;
+  font-size: 1.1em;
+  margin-top: 15px;
+  color: #222;
+}
