@@ -1,53 +1,70 @@
-/* Contenedor para centrar productos y carrito */
-.contenido-central {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 40px;
-    /* Espacio entre productos y carrito */
-    margin-top: 40px;
-    flex-wrap: wrap;
-    /* Permite que se acomode en móviles */
-}
-
-/* Productos */
-#productos {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    max-width: 600px;
-}
-
-/* Producto individual */
-.producto {
-    background: #0b1224;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 16px;
-    text-align: center;
-}
-
-/* Carrito */
+/* === Carrito mejorado === */
 #carrito {
-    background-color: #f9f9f9;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    width: 300px;
-    color: #111;
+    background-color: #1e293b; /* Fondo oscuro */
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 24px;
+    width: 320px;
+    color: var(--fg);
+    font-family: system-ui, Arial, sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsivo (opcional) */
-@media (max-width: 768px) {
-    .contenido-central {
-        flex-direction: column;
-        align-items: center;
-    }
+#carrito h2 {
+    text-align: center;
+    color: var(--brand);
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 10px;
+}
 
-    #productos,
-    #carrito {
-        max-width: 100%;
-        width: 100%;
-    }
+/* Lista del carrito */
+#lista-carrito {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#lista-carrito li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0f172a;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    transition: background-color 0.3s ease;
+}
+
+#lista-carrito li:hover {
+    background-color: #1a2538;
+}
+
+#lista-carrito img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 1px solid var(--line);
+}
+
+/* Texto del ítem */
+#lista-carrito li span {
+    flex-grow: 1;
+    font-size: 0.95em;
+    color: #e2e8f0;
+}
+
+/* Total */
+#carrito p {
+    text-align: right;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+    color: var(--brand);
+    border-top: 1px solid var(--line);
+    padding-top: 10px;
 }
