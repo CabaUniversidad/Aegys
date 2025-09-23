@@ -10,14 +10,14 @@ body {
 .skip-link { position:absolute; left:-9999px; top:auto; }
 .skip-link:focus { left:12px; top:12px; background:#000; color:#fff; padding:6px 10px; border-radius:6px; }
 
-/* ===== Header ===== */
-/* ===== Header base mejorado ===== */
 /* ===== Tema CLARO (override por atributo) ===== */
 :root[data-theme="light"]{
-  --bg: #f7fafc;        /* fondo */
-  --fg: #0f172a;        /* texto */
-  --line: #cbd5e1;      /* bordes */
+  --bg: #ffffff;        /* fondo más limpio */
+  --fg: #0b1224;        /* texto más oscuro para contraste */
+  --muted: #475569;     /* textos secundarios */
+  --line: #d7dbe3;      /* bordes más visibles en blanco */
   --brand: #0ea5e9;     /* acento */
+  --brand-weak: rgba(14,165,233,.12);  /* hover/fondo sutil */
 }
 
 /* Transición suave de colores */
@@ -42,6 +42,10 @@ html, body, .site-header {
   background: rgba(56,189,248,.10);
 }
 
+
+
+/* ===== Header ===== */
+/* ===== Header base mejorado ===== */
 
 
 .site-header{
