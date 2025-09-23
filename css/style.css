@@ -105,7 +105,7 @@ button { cursor: pointer; }
 
 
 
-/* ===== Footer (con Iconos) ===== */
+/* ===== Footer (con Iconos Coloridos) ===== */
 footer {
     background-color: #1a2233;
     color: #fff;
@@ -187,19 +187,42 @@ footer .footer-content {
     margin: 0;
 }
 
-/* Estilo para los iconos */
+/* Estilo general para los enlaces de iconos */
 .social-links a, .contact-info a {
-    color: #4da6ff; /* Color de los iconos y enlaces */
+    color: #fff; /* El texto del enlace sigue siendo blanco */
     text-decoration: none;
     font-weight: bold;
-    display: inline-flex; /* Permite alinear el icono y el texto */
+    display: inline-flex;
     align-items: center;
-    gap: 8px; /* Espacio entre el icono y el texto */
+    gap: 8px;
     margin: 0 5px;
 }
 
 .social-links a:hover, .contact-info a:hover {
     text-decoration: underline;
+}
+
+/* Colores específicos para los iconos de redes sociales */
+.social-links a .fa-facebook-f {
+    color: #3b5998; /* Color de Facebook */
+}
+
+.social-links a .fa-instagram {
+    color: #E1306C; /* Color de Instagram */
+    /* Para un degradado (más real, pero más complejo):
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    */
+}
+
+.social-links a .fa-twitter {
+    color: #1DA1F2; /* Color de Twitter */
+}
+
+/* Color para el icono de correo */
+.contact-info a .fa-envelope {
+    color: #EA4335; /* Un rojo vibrante, similar a Gmail */
 }
 
 /* Derechos de autor */
