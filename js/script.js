@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Muestra/oculta el formulario al hacer clic en el botón del icono
     toggleButton.addEventListener('click', function(event) {
-        event.stopPropagation(); // Evita que el clic se propague al documento
+        event.stopPropagation();
         formPopup.style.display = (formPopup.style.display === 'block') ? 'none' : 'block';
     });
 
@@ -28,12 +28,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cierra el formulario al hacer clic en cualquier lugar fuera de él
     document.addEventListener('click', function(event) {
-        // Verifica si el clic no ocurrió dentro del formulario ni en el botón de alternar
         if (!formPopup.contains(event.target) && !toggleButton.contains(event.target)) {
             formPopup.style.display = 'none';
         }
     });
 });
+
+
+
   // Tema inicial: localStorage > prefers-color-scheme
   const stored = localStorage.getItem(STORAGE_KEY);
   const prefersDark = window.matchMedia?.('(prefers-color-scheme: dark)').matches;
