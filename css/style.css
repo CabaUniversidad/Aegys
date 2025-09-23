@@ -110,57 +110,62 @@ body {
 }
 
 
-/* ====== Breakpoint 2: <= 680px (móvil) ====== */
-/* Dos filas: 1) marca centrada  2) nav horizontal con scroll lateral si no entra */
+/* ===== Móvil: mejora posición del logo ===== */
 @media (max-width: 680px){
+  /* El header permite 2 filas */
   .container.header__wrap{
-    flex-wrap: wrap;            /* permite segunda fila */
-    row-gap: 8px;
+    flex-wrap: wrap;
+    row-gap: 10px;                 /* más respiro entre marca y nav */
+    padding-left: 14px;
+    padding-right: 14px;
   }
 
-  /* 1) Marca centrada en la primera fila */
+  /* 1) Marca (logo + texto) centrada y en su propia fila */
   .brand{
-    order: 1;
-    margin: 0 auto;            /* centrado */
+    order: 1;                      /* va primero */
+    flex-basis: 100%;              /* ocupa todo el ancho */
+    display: flex;
+    justify-content: center;       /* CENTRA horizontalmente */
+    align-items: center;           /* alinea verticalmente logo/texto */
+    gap: 10px;
+    text-align: center;            /* por si solo queda el texto */
+    padding-block: 4px;            /* evita que “pegue” al borde superior */
   }
   .brand__logo{
-    width: clamp(36px, 10vw, 48px);
-    height: clamp(36px, 10vw, 48px);
-    padding: 3px;               /* pill más discreto en móvil */
+    margin: 0;                     /* sin desplazamientos raros */
+    width: clamp(40px, 12vw, 52px);
+    height: clamp(40px, 12vw, 52px);
+    padding: 3px;                  /* pill más discreto en móvil */
   }
   .brand__text{
     font-size: 1rem;
+    line-height: 1.1;
   }
 
-  /* 2) Nav ocupa todo el ancho en segunda fila, horizontal y deslizable */
+  /* 2) El nav va debajo y ocupa todo el ancho (sigue horizontal) */
   .site-nav{
-    order: 3;                   /* debajo de la marca */
+    order: 3;
     flex-basis: 100%;
   }
   .site-nav ul{
-    justify-content: flex-start;
+    justify-content: center;       /* centra los items; usa flex-start si prefieres a la izq */
     gap: 10px;
-    overflow-x: auto;           /* deslizable si no entra */
+    overflow-x: auto;              /* deslizable si no entra */
     -webkit-overflow-scrolling: touch;
-    padding-bottom: 4px;        /* evita cortar sombras de foco */
-    scrollbar-width: none;      /* oculta barra en Firefox */
+    scrollbar-width: none;
+    padding-bottom: 4px;
   }
-  .site-nav ul::-webkit-scrollbar{ display: none; } /* oculta barra en WebKit */
-
-  .site-nav a{
-    white-space: nowrap;        /* evita saltos de línea */
-    padding: 6px 10px;          /* “píldoras” táctiles */
-    border-radius: 9999px;
-    background: rgba(255,255,255,.04);
-  }
-  .site-nav a:hover{
-    background: rgba(56,189,248,.12);
-  }
-
-  /* Botón hamburguesa oculto de todos modos */
-  .nav-toggle{ display: none !important; }
+  .site-nav ul::-webkit-scrollbar{ display: none; }
 }
 
+/* ===== Muy pequeño: solo logo (opcional) ===== */
+@media (max-width: 420px){
+  .brand__text{ display: none; }   /* deja solo el isotipo centrado */
+  .brand__logo{
+    width: clamp(40px, 14vw, 48px);
+    height: clamp(40px, 14vw, 48px);
+  }
+}
 /* ====== Detalle nice-to-have: sombra al scrollear ====== */
 .site-header.is-scrolled{ box-shadow: 0 4px 18px rgba(0,0,0,.25); }
 
