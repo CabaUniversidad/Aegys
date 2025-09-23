@@ -25,6 +25,11 @@ html, body, .site-header {
   transition: background-color .2s ease, color .2s ease;
 }
 
+:root[data-theme="light"] .brand__logo{
+  /* ejemplo: */
+  /* content: url("imagenes_logo/logo_dark.png"); */
+  filter: none; /* quita filtros que aclaren */
+}
 /* Botón del switch */
 .theme-toggle{
   border: 1px solid var(--line);
@@ -84,9 +89,9 @@ html, body, .site-header {
 }
 .brand__text{
   color: var(--fg);
-  font-weight: 800;
   font-size: 1.25rem;
-  line-height: 1;
+  font-weight: 600;
+  line-height: 1.1;
 }
 
 .brand__logo{
