@@ -227,7 +227,7 @@ button { cursor: pointer; }
 
 
 
-/* ===== Footer (con Iconos Coloridos) ===== */
+/* ===== Footer (con Iconos Grandes y Fondo Blanco) ===== */
 footer {
     background-color: #1a2233;
     color: #fff;
@@ -309,40 +309,46 @@ footer .footer-content {
     margin: 0;
 }
 
-/* Estilo general para los enlaces de iconos */
-.social-links a, .contact-info a {
-    color: #fff; /* El texto del enlace sigue siendo blanco */
-    text-decoration: none;
-    font-weight: bold;
+/* Estilo para el contenedor de cada icono (fondo blanco y tamaño) */
+.icon-bg {
     display: inline-flex;
+    justify-content: center;
     align-items: center;
-    gap: 8px;
-    margin: 0 5px;
+    width: 40px; /* Tamaño del área del icono */
+    height: 40px; /* Tamaño del área del icono */
+    background-color: #fff; /* Fondo blanco */
+    border-radius: 50%; /* Forma circular */
+    margin: 0 5px; /* Espacio entre iconos */
+    transition: transform 0.2s ease-in-out; /* Animación al pasar el ratón */
 }
 
-.social-links a:hover, .contact-info a:hover {
-    text-decoration: underline;
+.icon-bg:hover {
+    transform: scale(1.1); /* Efecto de crecimiento al pasar el ratón */
 }
 
-/* Colores específicos para los iconos de redes sociales */
+/* Estilo para los iconos dentro del fondo blanco */
+.icon-bg .fab,
+.icon-bg .fas {
+    font-size: 1.5em; /* Tamaño del icono */
+    /* Reseteamos el color a transparente para que el color específico de cada red social tome efecto */
+    color: initial; 
+}
+
+
+/* Colores específicos para los iconos de redes sociales (dentro del fondo blanco) */
 .social-links a .fa-facebook-f {
     color: #3b5998; /* Color de Facebook */
 }
 
 .social-links a .fa-instagram {
     color: #E1306C; /* Color de Instagram */
-    /* Para un degradado (más real, pero más complejo):
-    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    */
 }
 
 .social-links a .fa-twitter {
     color: #1DA1F2; /* Color de Twitter */
 }
 
-/* Color para el icono de correo */
+/* Color para el icono de correo (dentro del fondo blanco) */
 .contact-info a .fa-envelope {
     color: #EA4335; /* Un rojo vibrante, similar a Gmail */
 }
@@ -354,6 +360,76 @@ footer .footer-content {
     font-size: 0.8em;
     color: #888;
     margin-top: 20px;
+}
+/* Estilo del botón del icono de mensaje */
+.toggle-form {
+    position: fixed; /* Lo fija en una posición de la pantalla */
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Icono circular */
+    background-color: #4da6ff;
+    color: #fff;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+/* Estilo del formulario emergente */
+.form-popup {
+    display: none; /* Por defecto, el formulario está oculto */
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 300px;
+    background-color: #1a2233;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.form-popup h2 {
+    color: #fff;
+    margin-top: 0;
+}
+
+.form-popup label {
+    color: #fff;
+}
+
+.form-popup input, .form-popup textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #4a5568;
+    background-color: #2d3748;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.form-popup button[type="submit"] {
+    background-color: #4da6ff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Botón para cerrar el formulario */
+.close-form {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
 }
 /* Estilo general del carrito */
 #carrito {
