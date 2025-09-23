@@ -87,6 +87,27 @@ body {
 /* no usar hamburguesa por ahora */
 .nav-toggle{ display: none !important; }
 
+/* ====== Breakpoint 1: <= 900px (tablet) ====== */
+@media (max-width: 900px){
+  .container.header__wrap{
+    gap: 10px;
+    padding: 8px 14px;
+  }
+  .brand__logo{
+    /* de 65px baja un poco en tablet */
+    width: clamp(44px, 6vw, 56px);
+    height: clamp(44px, 6vw, 56px);
+  }
+  .brand__text{
+    font-size: 1.1rem;
+  }
+  .site-nav ul{
+    gap: 12px;
+  }
+  .site-nav a{
+    padding: 6px 8px;
+  }
+}
 
 /* ===== Contenido ===== */
 main { max-width: 1000px; margin: 0 auto; padding: 16px; }
