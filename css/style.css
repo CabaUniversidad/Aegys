@@ -109,6 +109,54 @@ body {
   }
 }
 
+
+/* ====== Breakpoint 2: <= 680px (móvil) ====== */
+/* Dos filas: 1) marca centrada  2) nav horizontal con scroll lateral si no entra */
+@media (max-width: 680px){
+  .container.header__wrap{
+    flex-wrap: wrap;            /* permite segunda fila */
+    row-gap: 8px;
+  }
+
+  /* 1) Marca centrada en la primera fila */
+  .brand{
+    order: 1;
+    margin: 0 auto;            /* centrado */
+  }
+  .brand__logo{
+    width: clamp(36px, 10vw, 48px);
+    height: clamp(36px, 10vw, 48px);
+    padding: 3px;               /* pill más discreto en móvil */
+  }
+  .brand__text{
+    font-size: 1rem;
+  }
+
+  /* 2) Nav ocupa todo el ancho en segunda fila, horizontal y deslizable */
+  .site-nav{
+    order: 3;                   /* debajo de la marca */
+    flex-basis: 100%;
+  }
+  .site-nav ul{
+    justify-content: flex-start;
+    gap: 10px;
+    overflow-x: auto;           /* deslizable si no entra */
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;        /* evita cortar sombras de foco */
+    scrollbar-width: none;      /* oculta barra en Firefox */
+  }
+  .site-nav ul::-webkit-scrollbar{ display: none; } /* oculta barra en WebKit */
+
+  .site-nav a{
+    white-space: nowrap;        /* evita saltos de línea */
+    padding: 6px 10px;          /* “píldoras” táctiles */
+    border-radius: 9999px;
+    background: rgba(255,255,255,.04);
+  }
+  .site-nav a:hover{
+    background: rgba(56,189,248,.12);
+  }
+
 /* ===== Contenido ===== */
 main { max-width: 1000px; margin: 0 auto; padding: 16px; }
 h1 { margin: 16px 0; }
